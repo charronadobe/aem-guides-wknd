@@ -858,6 +858,16 @@ Bundle-DocURL:
                 <type>zip</type>
             </dependency>
             <!-- /ACS AEM Commons -->
+            <!-- AJC Veeva Connector -->
+            <dependency>
+                <groupId>com.adobe.acs.aemveeva</groupId>
+                <artifactId>aem-veeva-connector</artifactId>
+                <type>zip</type>
+                <version>2.4.9</version>
+                <scope>system</scope>
+                <systemPath>${project.basedir}/ui.apps/src/main/resources/aem-veeva-connector.all-2.4.9.zip</systemPath>
+            </dependency>
+            <!-- /AJC Veeva Connector -->
         </dependencies>
     </dependencyManagement>
 

@@ -99,6 +99,14 @@
                             <target>/apps/wknd-vendor-packages/container/install</target>
                         </embedded>
                         <!-- /AJC ACS AEM Commons -->
+                        <!-- AJC Veeva Connector -->
+                        <embedded>
+                            <groupId>com.adobe.acs.aemveeva</groupId>
+                            <artifactId>aem-veeva-connector</artifactId>
+                            <type>zip</type>
+                            <target>/apps/wknd-vendor-packages/application/install</target>
+                        </embedded>
+                        <!-- /AJC Veeva Connector -->
                     </embeddeds>
                 </configuration>
             </plugin>
@@ -380,5 +388,14 @@
             <type>zip</type>
         </dependency>
         <!--/AJC ACS AEM Commons -->
+        <!-- AJC Veeva Connector -->
+        <dependency>
+            <groupId>com.adobe.acs.aemveeva</groupId>
+            <artifactId>aem-veeva-connector</artifactId>
+            <type>zip</type>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../ui.apps/src/main/resources/aem-veeva-connector.all-2.4.9.zip</systemPath>
+        </dependency>
+        <!-- /AJC Veeva Connector -->
     </dependencies>
 </project>
