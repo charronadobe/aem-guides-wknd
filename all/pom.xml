@@ -90,6 +90,15 @@
                             <type>zip</type>
                             <target>/apps/wknd-vendor-packages/content/install</target>
                         </embedded>
+                        <!-- AJC ACS AEM Commons -->
+                        <embedded>
+                            <groupId>com.adobe.acs</groupId>
+                            <artifactId>acs-aem-commons-all</artifactId>
+                            <classifier>cloud</classifier>
+                            <type>zip</type>
+                            <target>/apps/wknd-vendor-packages/container/install</target>
+                        </embedded>
+                        <!-- /AJC ACS AEM Commons -->
                     </embeddeds>
                 </configuration>
             </plugin>
@@ -363,5 +372,13 @@
             <artifactId>aem-guides-wknd-shared.ui.content</artifactId>
             <type>zip</type>
         </dependency>        
+        <!-- AJC ACS AEM Commons -->
+        <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-all</artifactId>
+            <classifier>cloud</classifier>
+            <type>zip</type>
+        </dependency>
+        <!--/AJC ACS AEM Commons -->
     </dependencies>
 </project>

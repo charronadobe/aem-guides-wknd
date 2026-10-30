@@ -66,6 +66,10 @@
         <wknd-shared.version>3.1.0</wknd-shared.version>
         <wknd-shared.65.version>2.2.2</wknd-shared.65.version>
         <aemanalyser.version>1.6.6</aemanalyser.version>
+        <aemanalyser.version>1.6.6</aemanalyser.version>
+        <!-- AJC ACS AEM Commons Version -->
+        <acs-aem-commons.version>6.17.6</acs-aem-commons.version>
+        <!-- /AJC ACS AEM Commons Version -->
     </properties>
 
     <organization>
@@ -220,7 +224,8 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <!-- AJC I upversioned from 3.0.0 to 3.2.0 because clean kept failing to delete ui.apps/target -->
+                    <version>3.2.0</version>
                 </plugin>
                 <!-- BND Maven Plugin -->
                 <plugin>
@@ -844,6 +849,15 @@ Bundle-DocURL:
                 <version>1.0.1</version>
                 <scope>test</scope>
             </dependency>
+            <!-- AJC ACS AEM Commons -->
+            <dependency>
+                <groupId>com.adobe.acs</groupId>
+                <artifactId>acs-aem-commons-all</artifactId>
+                <version>${acs-aem-commons.version}</version>
+                <classifier>cloud</classifier>
+                <type>zip</type>
+            </dependency>
+            <!-- /ACS AEM Commons -->
         </dependencies>
     </dependencyManagement>
 
