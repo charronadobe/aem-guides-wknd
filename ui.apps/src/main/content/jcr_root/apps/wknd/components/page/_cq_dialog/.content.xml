@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <veevametadata
+                        cq:showOnCreate="{Boolean}true"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Veeva Metadata"
+                        sling:orderBefore="advanced"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <section
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Veeva Metadata"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <veeva-type
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Type"
+                                                name="./veeva-type">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <empty
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text=""
+                                                        value=""/>
+                                                    <materail
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Material"
+                                                        value="Material"/>
+                                                </items>
+                                            </veeva-type>
+                                            <veeva-subtype
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Sub-Type"
+                                                name="./veeva-subtype">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <empty
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text=""
+                                                        value=""/>
+                                                    <subprogrammaterail
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Speaker Program Material"
+                                                        value="Speaker Program Material"/>
+                                                </items>
+                                            </veeva-subtype>
+                                            <veeva-lifecycle
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Lifecycle"
+                                                name="./veeva-lifecycle">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <empty
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text=""
+                                                        value=""/>
+                                                    <materail
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Material"
+                                                        value="Material"/>
+                                                </items>
+                                            </veeva-lifecycle>
+                                            <veeva-material-intent
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Material Intent"
+                                                name="./veeva-material-intent">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <empty
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text=""
+                                                        value=""/>
+                                                    <promotional
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Promotional"
+                                                        value="Promotional"/>
+                                                </items>
+                                            </veeva-material-intent>
+                                            <veeva-status
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                disabled="{Boolean}true"
+                                                fieldLabel="Status"
+                                                name="./veeva-status"/>
+                                            <veeva-vault-id
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                disabled="{Boolean}true"
+                                                fieldLabel="Veeva Vault ID"
+                                                name="./veeva-vault-id"/>
+                                        </items>
+                                    </section>
+                                </items>
+                            </column>
+                        </items>
+                    </veevametadata>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
