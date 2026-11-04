@@ -105,8 +105,7 @@
                             <artifactId>aem-veeva-connector.all</artifactId>
                             <type>zip</type>
                             <target>/apps/wknd-packages/application/install</target>
-                        </embedded>
-                        <!-- /AJC Veeva Connector -->
+                        </embedded>                        <!-- /AJC Veeva Connector -->
                     </embeddeds>
                 </configuration>
             </plugin>
@@ -394,7 +393,6 @@
             <artifactId>aem-veeva-connector.all</artifactId>
             <version>2.5.3</version>
             <type>zip</type>
-        </dependency>
-        <!-- /AJC Veeva Connector -->
+        </dependency>        <!-- /AJC Veeva Connector -->
     </dependencies>
 </project>
