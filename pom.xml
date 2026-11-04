@@ -481,6 +481,15 @@ Bundle-DocURL:
                 </plugin>
             </plugins>
         </pluginManagement>
+        <!-- AJC Extension for Veeva Connector configuration -->
+        <extensions>
+            <extension>
+                <groupId>com.allogy.maven.wagon</groupId>
+                <artifactId>maven-s3-wagon</artifactId>
+                <version>1.2.0</version>
+            </extension>
+        </extensions>
+        <!-- /AJC Extension for Veeva Connector configuration -->
     </build>
 
     <profiles>
@@ -858,16 +867,6 @@ Bundle-DocURL:
                 <type>zip</type>
             </dependency>
             <!-- /ACS AEM Commons -->
-            <!-- AJC Veeva Connector -->
-            <!-- <dependency>
-                <groupId>com.adobe.acs.aemveeva</groupId>
-                <artifactId>aem-veeva-connector</artifactId>
-                <type>zip</type>
-                <version>2.4.9</version>
-                <scope>system</scope>
-                <systemPath>${project.basedir}/ui.apps/src/main/resources/aem-veeva-connector.all-2.4.9.zip</systemPath>
-            </dependency> -->
-            <!-- /AJC Veeva Connector -->
         </dependencies>
     </dependencyManagement>
 
@@ -882,4 +881,15 @@ Bundle-DocURL:
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
+    <!-- AJC Repositories for Veeva Connector -->
+    <repositories>
+        <repository>
+            <id>repo.ea.adobe.net</id>
+            <url>s3://repo.ea.adobe.net/release</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+    <!-- /AJC Repositories for Veeva Connector -->
 </project>

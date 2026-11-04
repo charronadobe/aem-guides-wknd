@@ -100,12 +100,12 @@
                         </embedded>
                         <!-- /AJC ACS AEM Commons -->
                         <!-- AJC Veeva Connector -->
-                        <!-- <embedded>
+                        <embedded>
                             <groupId>com.adobe.acs.aemveeva</groupId>
-                            <artifactId>aem-veeva-connector</artifactId>
+                            <artifactId>aem-veeva-connector.all</artifactId>
                             <type>zip</type>
-                            <target>/apps/wknd-vendor-packages/application/install</target>
-                        </embedded> -->
+                            <target>/apps/wknd-packages/application/install</target>
+                        </embedded>
                         <!-- /AJC Veeva Connector -->
                     </embeddeds>
                 </configuration>
@@ -389,13 +389,12 @@
         </dependency>
         <!--/AJC ACS AEM Commons -->
         <!-- AJC Veeva Connector -->
-        <!-- <dependency>
+        <dependency>
             <groupId>com.adobe.acs.aemveeva</groupId>
-            <artifactId>aem-veeva-connector</artifactId>
+            <artifactId>aem-veeva-connector.all</artifactId>
+            <version>2.5.3</version>
             <type>zip</type>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/../ui.apps/src/main/resources/aem-veeva-connector.all-2.4.9.zip</systemPath>
-        </dependency> -->
+        </dependency>
         <!-- /AJC Veeva Connector -->
     </dependencies>
 </project>
