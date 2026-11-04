@@ -890,5 +890,6 @@ Bundle-DocURL:
                 <enabled>true</enabled>
             </releases>
         </repository>
-    </repositories>    <!-- AJC Repositories for Veeva Connector -->
+    </repositories>
+    <!-- AJC Repositories for Veeva Connector -->
 </project>
