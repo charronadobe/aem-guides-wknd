@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <jcr:content
+            cq:designPath="/libs/settings/wcm/designs/default"
+            cq:template="/libs/cq/workflow/templates/model"
+            jcr:description="This workflow generates screenshot/pdf of page using adobe IO service with no user interaction and uploads the asset/page screenshot to Veeva Vault along with metadata based on Veeva Vault cloud configuration."
+            jcr:primaryType="cq:PageContent"
+            jcr:title="Veeva Connector - Trigger Review Workflow Auto"
+            sling:resourceType="cq/workflow/components/pages/model">
+        <flow
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="foundation/components/parsys">
+            <lockpayloadprocess
+                    jcr:description="A process to lock the payload."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Lock Payload Process"
+                    sling:resourceType="cq/workflow/components/workflow/lockpayloadprocess">
+                <metaData
+                        jcr:primaryType="nt:unstructured"
+                        PROCESS="com.day.cq.workflow.impl.process.LockProcess"
+                        PROCESS_AUTO_ADVANCE="true"/>
+            </lockpayloadprocess>
+            <process
+                    jcr:description="Generate PDF or screenshot image from page based on configuration."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Generate PDF/Screenshot from Page"
+                    sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                        jcr:primaryType="nt:unstructured"
+                        PROCESS="com.adobe.acs.aemveeva.core.workflow.GenerateScreenshotOrPDF"
+                        PROCESS_AUTO_ADVANCE="true"/>
+            </process>
+            <process_564886883
+                    jcr:description="Upload asset or screenshot/pdf of page to Veeva vault for review"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Upload document to Veeva Vault"
+                    sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                        jcr:primaryType="nt:unstructured"
+                        PROCESS="com.adobe.acs.aemveeva.core.workflow.UploadDocumentToVeevaVault"
+                        PROCESS_AUTO_ADVANCE="true"/>
+            </process_564886883>
+            <process_1200224627
+                    jcr:description="Updates Sharing Settings (Role to Users and Roles to Groups Mappings) of Veeva Asset"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Update Sharing Settings"
+                    sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                        jcr:primaryType="nt:unstructured"
+                        PROCESS="com.adobe.acs.aemveeva.core.workflow.UpdateSharingSettings"
+                        PROCESS_AUTO_ADVANCE="true"/>
+            </process_1200224627>
+        </flow>
+    </jcr:content>
+</jcr:root>

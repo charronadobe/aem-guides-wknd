@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:WorkflowModel"
+          sling:resourceType="cq/workflow/components/model"
+          description="This workflow generates screenshot/pdf of page using adobe IO service with no user interaction and uploads the asset/page screenshot to Veeva Vault along with metadata based on Veeva Vault cloud configuration."
+          title="Veeva Connector - Trigger Review Workflow Auto">
+    <metaData
+            cq:generatingPage="/conf/global/settings/workflow/models/veeva-connector/veeva-connector---trigger-review-workflow-auto/jcr:content"
+            jcr:primaryType="nt:unstructured"/>
+    <nodes jcr:primaryType="nt:unstructured">
+        <node0
+                jcr:primaryType="cq:WorkflowNode"
+                title="Start"
+                type="START">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node0>
+        <node1
+                jcr:primaryType="cq:WorkflowNode"
+                description="A process to lock the payload."
+                title="Lock Payload Process"
+                type="PROCESS">
+            <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.day.cq.workflow.impl.process.LockProcess"
+                    PROCESS_AUTO_ADVANCE="true"/>
+        </node1>
+        <node2
+                jcr:primaryType="cq:WorkflowNode"
+                description="Generate PDF or screenshot image from page based on configuration."
+                title="Generate PDF/Screenshot from Page"
+                type="PROCESS">
+            <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.acs.aemveeva.core.workflow.GenerateScreenshotOrPDF"
+                    PROCESS_AUTO_ADVANCE="true"/>
+        </node2>
+        <node3
+                jcr:primaryType="cq:WorkflowNode"
+                description="Upload asset or screenshot/pdf of page to Veeva vault for review"
+                title="Upload document to Veeva Vault"
+                type="PROCESS">
+            <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.acs.aemveeva.core.workflow.UploadDocumentToVeevaVault"
+                    PROCESS_AUTO_ADVANCE="true"/>
+        </node3>
+        <node4
+                jcr:primaryType="cq:WorkflowNode"
+                description="Updates Sharing Settings (Role to Users and Roles to Groups Mappings) of Veeva Asset"
+                title="Update Sharing Settings"
+                type="PROCESS">
+            <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.acs.aemveeva.core.workflow.UpdateSharingSettings"
+                    PROCESS_AUTO_ADVANCE="true"/>
+        </node4>
+        <node5
+                jcr:primaryType="cq:WorkflowNode"
+                title="End"
+                type="END">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node5>
+    </nodes>
+    <transitions jcr:primaryType="nt:unstructured">
+        <node0_x0023_node1
+                jcr:primaryType="cq:WorkflowTransition"
+                from="node0"
+                rule=""
+                to="node1">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node0_x0023_node1>
+        <node1_x0023_node2
+                jcr:primaryType="cq:WorkflowTransition"
+                from="node1"
+                rule=""
+                to="node2">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node1_x0023_node2>
+        <node2_x0023_node3
+                jcr:primaryType="cq:WorkflowTransition"
+                from="node2"
+                rule=""
+                to="node3">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node2_x0023_node3>
+        <node3_x0023_node4
+                jcr:primaryType="cq:WorkflowTransition"
+                from="node3"
+                rule=""
+                to="node4">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node3_x0023_node4>
+        <node4_x0023_node5
+                jcr:primaryType="cq:WorkflowTransition"
+                from="node4"
+                rule=""
+                to="node5">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node4_x0023_node5>
+    </transitions>
+</jcr:root>
