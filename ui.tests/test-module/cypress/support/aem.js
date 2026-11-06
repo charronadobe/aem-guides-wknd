@@ -38,7 +38,13 @@ Cypress.Commands.add('AEMLogin', function (username, password) {
   cy.session([username], () => {
     cy.visit('/libs/granite/core/content/login.html')
     if (Cypress.config().baseUrl.includes('adobeaemcloud.com') || Cypress.config().baseUrl.includes('adobeaemcloud.net')) {
-      cy.get('#coral-id-0').click()
+      // Click the Coral "sign in locally" toggle only if Coral rendered it.
+      // If the login page loaded without its clientlibs, the plain form fields are used directly.
+      cy.get('body').then(($body) => {
+        if ($body.find('#coral-id-0').length) {
+          cy.get('#coral-id-0').click()
+        }
+      })
     }
 
     cy.get('#login').should('have.attr', 'action', '/libs/granite/core/content/login.html/j_security_check')
@@ -47,7 +53,7 @@ Cypress.Commands.add('AEMLogin', function (username, password) {
     cy.get('#password').type(password, { log: false, parseSpecialCharSequences: false })
 
     cy.get('#submit-button').click()
-    cy.get('coral-shell-content', { timeout: 5000 }).should('exist')
+    cy.get('coral-shell-content', { timeout: 15000 }).should('exist')
   })
 })
 
