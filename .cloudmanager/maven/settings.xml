@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Credentials come from Cloud Manager pipeline variables set via aio-cli -->
+<settings>
+    <servers>
+        <server>
+            <id>repo.ea.adobe.net</id>
+            <username>${env.AWS_ACCESS_KEY_ID}</username>
+            <password>${env.AWS_SECRET_ACCESS_KEY}</password>
+            <filePermissions>BucketOwnerFullControl</filePermissions>
+            <configuration>
+              <wagonProvider>s3</wagonProvider>
+            </configuration>
+        </server>
+    </servers>
+</settings>
