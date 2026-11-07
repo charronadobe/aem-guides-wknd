@@ -6,6 +6,6 @@
     <filter root="/content/experience-fragments/wknd" mode="merge"/>
     <!-- AJC Veeva Connector add workflow model -->
     <filter root="/conf/global/settings/workflow/models/veeva-connector-extended/veeva-connector---trigger-review-workflow-auto"/>
-    <filter root="/var/workflow/models/veeva-connector" mode="merge"/>
+    <filter root="/var/workflow/models/veeva-connector-extended"/>
     <!-- /AJC Veeva Connector add workflow model -->
 </workspaceFilter>
