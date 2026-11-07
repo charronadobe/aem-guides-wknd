@@ -6,7 +6,7 @@
           description="This workflow generates screenshot/pdf of page using adobe IO service with no user interaction and uploads the asset/page screenshot to Veeva Vault along with metadata based on Veeva Vault cloud configuration."
           title="Veeva Connector - Trigger Review Workflow Auto">
     <metaData
-            cq:generatingPage="/conf/global/settings/workflow/models/veeva-connector/veeva-connector---trigger-review-workflow-auto/jcr:content"
+            cq:generatingPage="/conf/global/settings/workflow/models/veeva-connector-extended/veeva-connector---trigger-review-workflow-auto/jcr:content"
             jcr:primaryType="nt:unstructured"/>
     <nodes jcr:primaryType="nt:unstructured">
         <node0
