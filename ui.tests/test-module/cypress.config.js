@@ -34,9 +34,6 @@ const config = {
     REPORTS_PATH: reportsPath
   },
   e2e: {
-    // TEMPORARY: authoring spec skipped while the Stage author login page is served without its CSS/JS
-    // (HtmlLibraryManager: "No library configured at /libs/granite/core/content/login/clientlib"). Remove once fixed.
-    excludeSpecPattern: ['**/authoring.cy.js'],
     setupNodeEvents (on) {
       require('cypress-terminal-report/src/installLogsPrinter')(on, {
         printLogsToConsole: 'always'
