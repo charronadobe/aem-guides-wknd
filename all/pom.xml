@@ -389,11 +389,19 @@
         </dependency>
         <!--/AJC ACS AEM Commons -->
         <!-- AJC Veeva Connector -->
-        <dependency>
+        <!-- <dependency>
             <groupId>com.adobe.acs.aemveeva</groupId>
             <artifactId>aem-veeva-connector.all</artifactId>
             <version>2.5.3</version>
             <type>zip</type>
+        </dependency> -->
+        <dependency>
+            <groupId>com.adobe.acs.aemveeva</groupId>
+            <artifactId>aem-veeva-connector.all</artifactId>
+            <type>zip</type>
+            <version>2.5.4</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../ui.apps/src/main/resources/aem-veeva-connector.all-2.5.4-SNAPSHOT.zip</systemPath>
         </dependency>
         <!-- /AJC Veeva Connector -->
     </dependencies>
