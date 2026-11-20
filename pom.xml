@@ -60,8 +60,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- AJC latest SDK version -->
-        <aem.sdk.api>2026.10.29023.20261017T134015Z-261000</aem.sdk.api>
-        <!-- <aem.sdk.api>2026.11.29643.20261114T000343Z</aem.sdk.api> -->
+        <!-- <aem.sdk.api>2026.10.29023.20261017T134015Z-261000</aem.sdk.api> -->
+        <aem.sdk.api>2026.11.29643.20261114T000343Z-261000</aem.sdk.api>
         <!-- /AJC latest SDK version -->
         <componentGroupName>WKND Site</componentGroupName>
         <core.wcm.components.version>2.32.4</core.wcm.components.version>
